@@ -1,7 +1,13 @@
 Rails.application.routes.draw do
+
   devise_for :users
+
   resources :skills do
     resources :users
+  end
+
+  resources :users do
+    resources :skills
   end
 
 
