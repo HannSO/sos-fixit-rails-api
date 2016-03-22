@@ -27,6 +27,8 @@ gem 'devise'
 
 gem "factory_girl_rails", "~> 4.0"
 
+gem 'rabl'
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 

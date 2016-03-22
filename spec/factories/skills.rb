@@ -1,6 +1,6 @@
 FactoryGirl.define do
   factory :skill do
     name "bike-repairs"
-    association :user, :factory => user
+    user
   end
 end
