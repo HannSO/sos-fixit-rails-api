@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
 
-  devise_for :users
+  mount_devise_token_auth_for 'User', at: 'auth'
+
+  resources :groups, except: [:new, :edit]
 
   resources :skills do
     resources :users
