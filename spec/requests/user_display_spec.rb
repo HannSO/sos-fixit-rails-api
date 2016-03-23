@@ -1,7 +1,8 @@
 require 'rails_helper'
 
-describe 'Skills-User API' do
+describe 'Users by Skill' do
   it 'returns a list of users who have that skill' do
+
     FactoryGirl.create_list(:user, 5)
 
     get '/skills/1/users'
