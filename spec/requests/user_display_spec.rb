@@ -1,16 +1,20 @@
 require 'rails_helper'
 
 describe 'Users by Skill' do
+
   it 'returns a list of users who have that skill' do
 
-    FactoryGirl.create_list(:user, 5)
+    skill = FactoryGirl.create(:skill)
 
-    get '/skills/1/users'
+    get "/skills/#{skill.id}"
 
     json = JSON.parse(response.body)
 
     expect(response).to be_success
-    expect(json.length).to eq(5)
+    expect(json['skill']['name']).to eq(skill.name)
+    expect(json['skill']['users']).to eq(skill.users)
+    p json['skill']['users']
+    expect(json.length).to eq(1)
 
   end
 end
