@@ -23,9 +23,25 @@ skills.each do |skill|
   Skill.create(name: skill)
 end
 
-users = User.all
-skills = Skill.all
 
-users.each do |user|
-  user.skills << skills
+users_one = User.find([1,3])
+skills_one = Skill.find([1,4])
+
+users_one.each do |user|
+  user.skills << skills_one
+end
+
+users_two = User.find([2,4])
+skills_two = Skill.find([2,3])
+
+users_two.each do |user|
+  user.skills << skills_two
+end
+
+
+users_three = User.find([1,4])
+skills_three = Skill.find([5])
+
+users_three.each do |user|
+  user.skills << skills_three
 end
