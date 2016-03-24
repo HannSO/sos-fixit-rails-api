@@ -11,9 +11,9 @@ FactoryGirl.define do
       end
 
       after(:create) do |user, evaluator|
-        create_list(:user, evaluator.user_count, skill: [skill])
+        create_list(:user, evaluator.user_count, skill: :skill)
       end
-      
+
     end
 
   end
