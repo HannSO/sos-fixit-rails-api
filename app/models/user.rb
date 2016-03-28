@@ -7,6 +7,7 @@ class User < ActiveRecord::Base
 
   has_many :users_skills
   has_many :skills, through: :users_skills
+  acts_as_messageable
 
   before_save -> do
     self.uid = SecureRandom.uuid
