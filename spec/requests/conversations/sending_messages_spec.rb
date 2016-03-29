@@ -7,6 +7,7 @@ describe 'Sending a message' do
 
   before do
     @message = {
+      sender: user_one.id,
       recipients: user_two.id,
       message: {
         body: "message body",

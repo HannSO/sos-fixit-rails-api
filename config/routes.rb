@@ -3,8 +3,17 @@ Rails.application.routes.draw do
   mount_devise_token_auth_for 'User', at: 'auth'
 
   resources :users
-  resources :skills
+
+  resources :skills do
+    member do
+      get :users
+    end
+  end
+
+
   resources :jobs
+
+
 
   resources :conversations, only: [:index, :show, :destroy] do
     member do

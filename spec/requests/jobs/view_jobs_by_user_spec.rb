@@ -18,14 +18,12 @@ describe 'Viewing jobs belonging to a user' do
   it 'returns a job for the recipient' do
     get "/user/#{user_one.id}/jobs/recipient_of"
     json = JSON.parse(response.body)
-    byebug
     expect(response).to be_success
   end
 
   it 'returns a job for the fixer' do
     get "/user/#{user_one.id}/jobs/fixer_of"
     json = JSON.parse(response.body)
-    byebug
     expect(response).to be_success
   end
 
