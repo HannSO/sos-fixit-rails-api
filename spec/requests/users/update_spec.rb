@@ -14,8 +14,8 @@ describe 'Users' do
       @location = {
         id: user.id,
         password: user.password,
-        longitude: "-77.0427934",
-        latitude: "-12.046374"
+        longitude: -77.0427934,
+        latitude: -12.046374
       }
     end
 
@@ -23,8 +23,8 @@ describe 'Users' do
       patch "/auth", @location, @auth_headers
       json = JSON.parse(response.body)
       expect(response).to be_success
-      expect(User.first.longitude).to eq("-77.0427934")
-      expect(User.first.latitude).to eq("-12.046374")
+      expect(User.first.longitude).to eq(-77.0427934)
+      expect(User.first.latitude).to eq(-12.046374)
     end
 
   end

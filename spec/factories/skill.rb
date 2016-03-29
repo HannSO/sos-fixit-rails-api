@@ -1,21 +1,14 @@
 FactoryGirl.define do
 
   factory :skill do
-
-    name "bike-repairs"
+    name {Faker::Hipster.word}
 
     factory :skill_with_users do
-
-      transient do
-        user_count 5
+      after(:create) do |skill|
+        skill.users << create_list(:user, 5)
       end
-
-      after(:create) do |user, evaluator|
-        create_list(:user, evaluator.user_count, skill: :skill)
-      end
-
     end
-
+    
   end
 
 end
