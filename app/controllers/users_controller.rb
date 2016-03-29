@@ -10,14 +10,16 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
   end
 
-  def edit(user_params)
+  def update
     @user = User.find(params [:user])
-
-    @skill = Skill.find(params [:skill])
+    @skill = Skill.find(params[:skills])
     @user.skill << @skill
+
+    render json: @user
+
   end
 
   def user_params
-    params.require(:user).permit(:skills, :user)
+    params.require(:user).permit(:skills)
   end
 end
