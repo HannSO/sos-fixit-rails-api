@@ -6,16 +6,15 @@ describe 'Users' do
 
     before do
       user = FactoryGirl.create(:user)
+      @user_id = user.id
       @auth_headers = user.create_new_auth_token
       @user_params = {
         email: user.email,
         password: user.password
       }
       @location = {
-        id: user.id,
-        password: user.password,
-        longitude: "-77.0427934",
-        latitude: "-12.046374"
+        longitude: -77.0427934,
+        latitude: -12.046374
       }
     end
 
@@ -23,8 +22,8 @@ describe 'Users' do
       patch "/auth", @location, @auth_headers
       json = JSON.parse(response.body)
       expect(response).to be_success
-      expect(User.first.longitude).to eq("-77.0427934")
-      expect(User.first.latitude).to eq("-12.046374")
+      expect(User.find(@user_id).longitude).to eq(-77.0427934)
+      expect(User.find(@user_id).latitude).to eq(-12.046374)
     end
 
   end
