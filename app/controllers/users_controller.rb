@@ -15,7 +15,6 @@ class UsersController < ApplicationController
     @skill = Skill.find(params[:skills])
     @user.skills << @skill
     render json: @user
-
   end
 
   def user_params
