@@ -14,4 +14,8 @@ class User < ActiveRecord::Base
     skip_confirmation!
   end
 
+  def mailboxer_email(object)
+   email
+  end
+
 end
