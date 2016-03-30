@@ -10,4 +10,14 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
   end
 
+  def update
+    @user = User.find(params[:id])
+    @skill = Skill.find(params[:skills])
+    @user.skills << @skill
+  end
+
+  def user_params
+    params.require(:user).permit(:skills, :user)
+  end
+
 end
