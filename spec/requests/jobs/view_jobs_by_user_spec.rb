@@ -16,13 +16,13 @@ describe 'Viewing jobs belonging to a user' do
   end
 
   it 'returns a job for the recipient' do
-    get "/user/#{user_one.id}/jobs/recipient_of"
+    get "/user/#{user_one.id}/jobs/recipient_of", @auth_headers
     json = JSON.parse(response.body)
     expect(response).to be_success
   end
 
   it 'returns a job for the fixer' do
-    get "/user/#{user_one.id}/jobs/fixer_of"
+    get "/user/#{user_one.id}/jobs/fixer_of", @auth_headers
     json = JSON.parse(response.body)
     expect(response).to be_success
   end

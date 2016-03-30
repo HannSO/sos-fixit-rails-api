@@ -1,6 +1,6 @@
 class JobsController < ApplicationController
 
-  # before_action :authenticate_user!
+  before_action :authenticate_user!
 
   def index
     @jobs = Job.all
@@ -27,11 +27,15 @@ class JobsController < ApplicationController
 
   def update
     @job = Job.find(params[:id])
-    @job.update(job_params)
+    if current_user.id == @job.recipient_id
+      @job.update(job_params)
+    else
+      raise 'Only the recipient can add a review or rating'
+    end
   end
 
   def job_params
-    params.permit(:review, :rating)
+    params.permit(:review, :rating, :is_active)
   end
 
 end
