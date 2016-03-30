@@ -22,6 +22,7 @@ ActiveRecord::Schema.define(version: 20160329205237) do
     t.integer  "fixer_id"
     t.datetime "created_at",                   null: false
     t.datetime "updated_at",                   null: false
+    t.boolean  "active?",      default: false
     t.text     "review"
     t.integer  "rating"
     t.boolean  "is_active",    default: false
