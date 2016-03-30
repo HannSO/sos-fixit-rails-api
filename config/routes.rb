@@ -3,7 +3,18 @@ Rails.application.routes.draw do
   mount_devise_token_auth_for 'User', at: 'auth'
 
   resources :users
-  resources :skills
+
+  resources :skills do
+    member do
+      get :users
+    end
+  end
+
+
+  resources :jobs
+
+
+
   resources :conversations, only: [:index, :show, :destroy] do
     member do
       post :reply
@@ -20,6 +31,8 @@ Rails.application.routes.draw do
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
+  get '/user/:id/jobs/fixer_of' => 'jobs#index_where_fixer'
+  get '/user/:id/jobs/recipient_of' => 'jobs#index_where_recipient'
 
   # Example of named route that can be invoked with purchase_url(id: product.id)
   #   get 'products/:id/purchase' => 'catalog#purchase', as: :purchase
