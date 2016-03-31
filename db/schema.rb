@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160329205237) do
+ActiveRecord::Schema.define(version: 20160331172305) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -20,12 +20,14 @@ ActiveRecord::Schema.define(version: 20160329205237) do
     t.string   "name"
     t.integer  "recipient_id"
     t.integer  "fixer_id"
-    t.datetime "created_at",                   null: false
-    t.datetime "updated_at",                   null: false
-    t.boolean  "active?",      default: false
+    t.datetime "created_at",                         null: false
+    t.datetime "updated_at",                         null: false
+    t.boolean  "active?",            default: false
     t.text     "review"
     t.integer  "rating"
-    t.boolean  "is_active",    default: false
+    t.boolean  "is_active",          default: false
+    t.string   "recipient_username"
+    t.string   "fixer_username"
   end
 
   create_table "mailboxer_conversation_opt_outs", force: :cascade do |t|
