@@ -18,7 +18,9 @@ class JobsController < ApplicationController
   end
 
   def create
-    @job = Job.create(recipient_id: params[:recipient_id], fixer_id: params[:fixer_id], name: params[:name] )
+    recipient_username = User.find(params[:recipient_id]).name
+    fixer_username = User.find(params[:fixer_id]).name
+    @job = Job.create(recipient_id: params[:recipient_id], recipient_username: recipient_username, fixer_id: params[:fixer_id], fixer_username: fixer_username, name: params[:name] )
   end
 
   def show
