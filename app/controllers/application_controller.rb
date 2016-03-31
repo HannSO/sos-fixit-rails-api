@@ -10,7 +10,7 @@ class ApplicationController < ActionController::Base
   protected
 
   def configure_permitted_parameters
-    devise_parameter_sanitizer.for(:sign_up) << :longitude << :latitude << :location
+    devise_parameter_sanitizer.for(:sign_up) << :longitude << :latitude << :location << :name
     devise_parameter_sanitizer.for(:account_update) << :longitude << :latitude << :location
   end
 

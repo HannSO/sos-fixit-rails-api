@@ -7,6 +7,9 @@ class User < ActiveRecord::Base
 
   has_many :users_skills
   has_many :skills, through: :users_skills
+  has_many :recieved_jobs, foreign_key: "recipient_id", source: :job
+  has_many :fixed_jobs, foreign_key: "fixer_id", source: :job
+
   acts_as_messageable
 
   before_save -> do

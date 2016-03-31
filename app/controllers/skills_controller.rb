@@ -10,4 +10,8 @@ class SkillsController < ApplicationController
     @skill = Skill.find(params[:id])
   end
 
+  def users
+    @users = User.joins(:skills).where(skills: { id: params[:id] })
+  end
+
 end
