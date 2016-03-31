@@ -16,6 +16,10 @@ class UsersController < ApplicationController
     @user.skills << @skill
   end
 
+  def skills
+    @skills = Skill.joins(:users).where(users: { id: params[:id] })
+  end
+
   def user_params
     params.require(:user).permit(:skills, :user)
   end
