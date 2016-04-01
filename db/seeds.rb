@@ -7,26 +7,26 @@
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
 users = [
-  ['ron@mail.com', 'Ron', 'password', 51.521, -0.0843, '/images/profiles/ron.jpg'],
-  ['ben@mail.com', 'Ben', 'password', 51.529, -0.0852, '/images/profiles/ben.jpg'],
-  ['tom@mail.com', 'Tom', 'password', 51.532, -0.0842, '/images/profiles/tom.jpg'],
-  ['leslie@mail.com', 'Leslie', 'password', 51.525, -0.0832, '/images/profiles/leslie.jpg'],
-  ['ann@mail.com', 'Ann', 'password', 51.528, -0.0822, '/images/profiles/ann.jpg'],
-  ['april@mail.com', 'April', 'password', 51.535, -0.0802, '/images/profiles/april.jpg'],
-  ['andy@mail.com', 'Andy', 'password', 51.535, -0.0818, '/images/profiles/andy.jpg'],
-  ['jerry@mail.com', 'Jerry', 'password', 51.505, -0.0802, '/images/profiles/jerry.jpg'],
-  ['kramer@mail.com', 'Kramer', 'password', 51.545, -0.0866, '/images/profiles/kramer.jpg'],
-  ['george@mail.com', 'George', 'password', 51.509, -0.0891, '/images/profiles/george.jpg'],
-  ['elaine@mail.com', 'Elaine', 'password', 51.495, -0.0802, '/images/profiles/elaine.jpg'],
-  ['newman@mail.com', 'Newman', 'password', 51.518, -0.0839, '/images/profiles/newman.jpg'],
-  ['larry@mail.com', 'Larry', 'password', 51.325, -0.0839, '/images/profiles/larry.jpg'],
-  ['fred@mail.com', 'Fred', 'password', 51.425, -0.0810, '/images/profiles/fred.jpg'],
-  ['carrie@mail.com', 'Carrie', 'password', 51.625, -0.0882, '/images/profiles/carrie.jpg'],
+  ['ron@mail.com', 'Ron', 'password', 51.521, -0.0843, '/images/profiles/ron.jpg', 'Shoreditch'],
+  ['ben@mail.com', 'Ben', 'password', 51.529, -0.0852, '/images/profiles/ben.jpg', 'London'],
+  ['tom@mail.com', 'Tom', 'password', 51.532, -0.0842, '/images/profiles/tom.jpg', 'London'],
+  ['leslie@mail.com', 'Leslie', 'password', 51.525, -0.0832, '/images/profiles/leslie.jpg', 'Shoreditch'],
+  ['ann@mail.com', 'Ann', 'password', 51.528, -0.0822, '/images/profiles/ann.jpg', 'Commercial Street'],
+  ['april@mail.com', 'April', 'password', 51.535, -0.0802, '/images/profiles/april.jpg', 'London'],
+  ['andy@mail.com', 'Andy', 'password', 51.535, -0.0818, '/images/profiles/andy.jpg', 'Shoreditch'],
+  ['jerry@mail.com', 'Jerry', 'password', 51.505, -0.0802, '/images/profiles/jerry.jpg', 'Shoreditch'],
+  ['kramer@mail.com', 'Kramer', 'password', 51.545, -0.0866, '/images/profiles/kramer.jpg', 'Shoreditch'],
+  ['george@mail.com', 'George', 'password', 51.509, -0.0891, '/images/profiles/george.jpg', 'Shoreditch'],
+  ['elaine@mail.com', 'Elaine', 'password', 51.495, -0.0802, '/images/profiles/elaine.jpg', 'Shoreditch'],
+  ['newman@mail.com', 'Newman', 'password', 51.518, -0.0839, '/images/profiles/newman.jpg', 'London'],
+  ['larry@mail.com', 'Larry', 'password', 51.325, -0.0839, '/images/profiles/larry.jpg', 'London'],
+  ['fred@mail.com', 'Fred', 'password', 51.425, -0.0810, '/images/profiles/fred.jpg', 'Shoreditch'],
+  ['carrie@mail.com', 'Carrie', 'password', 51.625, -0.0882, '/images/profiles/carrie.jpg', 'Shoreditch'],
 
 ]
 
-users.each do |email, name, password, lat, lng, image|
-  User.create(email: email, name: name, password: password, password_confirmation: password, latitude: lat, longitude: lng, image: image)
+users.each do |email, name, password, lat, lng, image, location|
+  User.create(email: email, name: name, password: password, password_confirmation: password, latitude: lat, longitude: lng, image: image, location: location)
 end
 
 skills = [
