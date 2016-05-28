@@ -1,5 +1,7 @@
 # sos-fixit-rails-api
 
+* FOR A DEMO OF OUR APP, PLEASE VIEW: https://youtu.be/m5uixjr55oo *
+
 ## User Stories:
 
 ###User Story 1:
@@ -20,7 +22,7 @@ I would like to list the skills on my profile.
 ```
 As a user,
 So that I can find people near me to help with a current issue,
-I would like to be able to search by skill. 
+I would like to be able to search by skill.
 ```
 
 ### User Story 4:
