@@ -1,5 +1,13 @@
 # sos-fixit-rails-api
 
+## Quick start
+
+```bash
+rake db:create
+rake db:migrate RAILS_ENV=test
+rspec
+```
+
 ## User Stories:
 
 ###User Story 1:
@@ -20,7 +28,7 @@ I would like to list the skills on my profile.
 ```
 As a user,
 So that I can find people near me to help with a current issue,
-I would like to be able to search by skill. 
+I would like to be able to search by skill.
 ```
 
 ### User Story 4:
