@@ -2,6 +2,14 @@
 
 * FOR A DEMO OF OUR APP, PLEASE VIEW: https://youtu.be/m5uixjr55oo *
 
+# Instructions 
+This project is using Ruby version 2.2.3. To use this, run:
+
+```bash
+rvm install ruby-2.2.3
+rvm use 2.2.3
+```
+
 ## User Stories:
 
 ###User Story 1:
